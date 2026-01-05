@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ВГУВТ — Волжский государственный университет водного транспорта</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a3d62;
+      --secondary: #1e90ff;
+      --accent: #00cec9;
+      --light: #f4f8fb;
+      --dark: #1b1b1b;
+    }
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;scroll-behavior:smooth;}
+    body {background:var(--light);color:var(--dark);line-height:1.6;}
+
+    nav{position:fixed;top:0;left:0;width:100%;background:rgba(10,61,98,0.95);display:flex;justify-content:space-between;align-items:center;padding:15px 10%;z-index:1000;color:white;flex-wrap:wrap;}
+    nav a{color:white;text-decoration:none;margin-left:20px;font-weight:500;}
+    nav a:hover{color:var(--accent);}    
+
+    header{height:100vh;background:linear-gradient(rgba(10,61,98,.7),rgba(10,61,98,.7)),url('images/vguvt.jpg');background-size:cover;background-position:center;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;}
+    header h1{font-size:3rem;}
+    header p{max-width:90%;margin:20px 0;font-size:1.1rem;}
+    .btn{padding:12px 30px;background:var(--secondary);border-radius:30px;color:white;text-decoration:none;font-weight:600;transition:.3s;font-size:1rem;}
+    .btn:hover{background:var(--accent);}
+
+    section{padding:70px 5%;}
+    h2{text-align:center;font-size:2rem;margin-bottom:40px;color:var(--primary);}
+
+    .about,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:center;}
+    img{width:100%;border-radius:20px;}
+
+    .card{background:white;padding:20px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.1);transition:.3s;}
+    .card:hover{transform:translateY(-5px);}
+
+    .stats{background:var(--primary);color:white;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;text-align:center;}
+    .stat h3{font-size:2.2rem;}
+
+    .timeline{border-left:4px solid var(--secondary);padding-left:20px;}
+    .event{margin-bottom:20px;font-size:0.9rem;}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+    .gallery img{cursor:pointer;transition:.3s;}
+    .gallery img:hover{transform:scale(1.05);}    
+
+    form{max-width:100%;margin:auto;display:grid;gap:15px;}
+    input,textarea{padding:12px;border-radius:10px;border:1px solid #ccc;font-size:0.9rem;}
+
+    footer{background:#081f33;color:white;text-align:center;padding:40px 10px;font-size:0.9rem;}
+
+    #topBtn{position:fixed;bottom:20px;right:20px;background:var(--secondary);color:white;border:none;border-radius:50%;width:50px;height:50px;font-size:20px;cursor:pointer;display:none;}
+
+    /* --- Media Queries для телефонов --- */
+    @media (max-width:768px) {
+      nav{padding:10px 5%;}
+      nav a{margin-left:10px;font-size:0.9rem;}
+      header h1{font-size:2rem;}
+      header p{font-size:1rem;}
+      .btn{padding:10px 25px;font-size:0.9rem;}
+      h2{font-size:1.6rem;margin-bottom:30px;}
+      .card{padding:15px;}
+      .stats{grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px;}
+      .stat h3{font-size:1.8rem;}
+      .timeline{padding-left:15px;}
+      .event{font-size:0.8rem;}
+      .gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+      form input,form textarea{font-size:0.85rem;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <strong>ВГУВТ</strong>
+  <div>
+    <a href="#about">О вузе</a>
+    <a href="#edu">Обучение</a>
+    <a href="#history">История</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#contact">Поступление</a>
+  </div>
+</nav>
+
+<header>
+  <h1>ВГУВТ</h1>
+  <p>Волжский государственный университет водного транспорта — флагман транспортного образования России</p>
+  <a class="btn" href="#about">Начать путешествие</a>
+</header>
+
+<section id="about">
+  <h2>О университете</h2>
+  <div class="about">
+    <div>
+      <p><strong>ВГУВТ</strong> готовит специалистов для речного и морского флота, логистики, инженерии и IT.</p>
+      <ul>
+        <li>⚓ Практика на реальных судах</li>
+        <li>📡 Современные тренажёры</li>
+        <li>🎓 Высокий процент трудоустройства</li>
+        <li>🌍 Работа по всей России</li>
+      </ul>
+    </div>
+    <img src="images/student.jpg" alt="Студенты ВГУВТ">
+  </div>
+</section>
+
+<section id="edu">
+  <h2>Направления подготовки</h2>
+  <div class="grid">
+    <div class="card"><h3>Судовождение</h3><p>Капитаны, штурманы, навигация.</p></div>
+    <div class="card"><h3>Судомеханика</h3><p>Двигатели, энергетика, ремонт.</p></div>
+    <div class="card"><h3>Логистика</h3><p>Управление перевозками и портами.</p></div>
+    <div class="card"><h3>IT</h3><p>Навигационные и цифровые системы.</p></div>
+    <div class="card"><h3>Экономика</h3><p>Бизнес и управление в транспорте.</p></div>
+    <div class="card"><h3>Безопасность</h3><p>Транспортная и экологическая безопасность.</p></div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><h3>100+</h3><p>лет истории</p></div>
+  <div class="stat"><h3>10 000+</h3><p>студентов</p></div>
+  <div class="stat"><h3>50+</h3><p>программ</p></div>
+  <div class="stat"><h3>90%</h3><p>трудоустройство</p></div>
+</section>
+
+<section id="history">
+  <h2>История ВГУВТ</h2>
+  <div class="timeline">
+    <div class="event"><strong>1916</strong> — основание учебного заведения</div>
+    <div class="event"><strong>1940–1980</strong> — развитие флота СССР</div>
+    <div class="event"><strong>2000+</strong> — цифровизация и модернизация</div>
+    <div class="event"><strong>Сегодня</strong> — ведущий транспортный вуз РФ</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Жизнь университета</h2>
+  <div class="gallery">
+    <img src="images/student.jpg" alt="Студенты">
+    <img src="images/sudno.jpg" alt="Судно">
+    <img src="images/elka.jpg" alt="Елка">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Поступление</h2>
+  <form onsubmit="event.preventDefault(); alert('Заявка отправлена!');">
+    <input type="text" placeholder="ФИО" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Телефон">
+    <textarea rows="4" placeholder="Комментарий"></textarea>
+    <button class="btn" type="submit">Отправить заявку</button>
+  </form>
+</section>
+
+<footer>
+  <h3>ВГУВТ</h3>
+  <p>Волжский государственный университет водного транспорта</p>
+  <p>© 2026 Учебный проект Былков Александр</p>
+</footer>
+
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const btn = document.getElementById('topBtn');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY > 500 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>
